@@ -35,6 +35,6 @@ yarn-error.log*
 
 
 #custom
-/styles/IRANSans
-/components/constants.js
-/public/images
+#/styles/IRANSans
+#/components/constants.js
+#/public/images
