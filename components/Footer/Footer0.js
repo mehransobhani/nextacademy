@@ -8,7 +8,7 @@ export default function Footer(){
             <section className={'footer-contact d-flex justify-content-center align-items-center dir-rtl py-2'}>
                 <Phone />&nbsp;
                 <span>&nbsp;تلفن پشتیبانی :&nbsp;</span>
-                <span>&nbsp;021-91003037&nbsp;</span>
+                <span>&nbsp;021-91076959&nbsp;</span>
             </section>
             <section className="main-footer">
                 <div className="container">
@@ -51,7 +51,7 @@ export default function Footer(){
                                         <span className={'logo-subtitle'}>تحقق رویای هنرمندانه‌ ی تو</span>
                                     </div>
                                 </div>
-                                <p className={"footer-address"}>تهران، بلوار مرزداران، جنب پل یادگار امام، خیابان ابراهیمی، برج الوند، واحد 303</p>
+                                <p className={"footer-address"}>تهران، بلوار مرزداران، خیابان اطاعتی ،خیابان پاس فرهنگیان</p>
                                 <div className="footer-main-links">
                                     <ul  className="footer-main-list d-flex p-0">
                                         <li>
