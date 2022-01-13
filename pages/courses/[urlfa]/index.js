@@ -25,6 +25,23 @@ const Course = props => {
 
 
     const checkOutModalButton = () => {
+	if(props.token !== undefined && !checkOutModal){
+            axios.post(constants.apiURL + '/api/log-user-footprint', {
+                actionId: 3,
+                courseId: props.course.data.id,
+            }, {
+                headers: {
+                    'Authorization': 'Bearer ' + props.token,
+                }
+            }).then((r) => {
+                response = r.data;
+                if(response.status !== 'done'){
+                    console.log('could not add user footprint');
+                }
+            }).catch((e) => {
+                console.error(e);
+            });
+        }
         setCheckOutModal(!checkOutModal)
     }
 
@@ -396,7 +413,7 @@ Course.getInitialProps = async (ctx, token) => {
 
         data.course = json;
         data.currRouteURI = asPath;
-
+	data.token = token;
 
         return data;
     } catch (error) {
