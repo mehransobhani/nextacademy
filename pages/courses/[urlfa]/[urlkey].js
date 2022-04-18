@@ -120,9 +120,9 @@ class Step extends React.Component {
                 </div>
             </div>
 
-                <Comment step_id={this.props.step.id}
+                {/*<Comment step_id={this.props.step.id}
                          key={this.props.step.id}
-                />
+                />*/}
 
         </React.Fragment>
     }

@@ -461,6 +461,7 @@ const script = document.createElement('script');
                             token: token
                         }),
                     });
+			console.log(await serverResponse);
                     const json = await serverResponse.json();
                     if (serverResponse.status !== 200) {
                         throw ({data: json, status: serverResponse.status})
@@ -512,6 +513,7 @@ const script = document.createElement('script');
                     if (serverResponse.status !== 200) {
                         throw ({data: json, status: serverResponse.status})
                     }
+			console.log(json);
                     if (!json.success) {
                         let oneYear = Date.now() - 365 * 24 * 60 * 60 * 1000;
                         cookies.set('class_token', '', {
@@ -529,6 +531,7 @@ const script = document.createElement('script');
                     }
                     user_info = json.data.user_info;
                 } catch (error) {
+			console.log(error);
                     let oneYear = Date.now() - 365 * 24 * 60 * 60 * 1000;
                     cookies.set('class_token', '', {
                         httpOnly: false,
@@ -546,7 +549,9 @@ const script = document.createElement('script');
             }
 
             if (class_token) {
+		console.log("class token is set");
                 if (user_server_token) {
+			console.log("user token is set");
                     await checkToken(class_token , user_server_token)
                 }
                 else {
@@ -573,6 +578,8 @@ const script = document.createElement('script');
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx , class_token);
         }
+	console.log(pageProps);
+	console.log(user_info);
         return { pageProps , user_info : user_info };
     };
 
